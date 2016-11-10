@@ -12,9 +12,11 @@ namespace WindowsFormsApplication1
     {
         public static async Task<dynamic> getDataFromService(string queryString)
             {
+                // Stworzenie obiketu client klasy HttpClient i zmiennej response zawierającej odpowiedź na zapytanie queryString
                 HttpClient client = new HttpClient();
                 var response = await client.GetAsync(queryString);
 
+                // Pobieranie przy pomocy json obecnych danych
                 dynamic data = null;
                 if (response != null)
                 {

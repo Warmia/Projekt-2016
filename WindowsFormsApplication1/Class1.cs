@@ -17,6 +17,7 @@ namespace WindowsFormsApplication1
 
             dynamic results = await DataServices.getDataFromService(queryString).ConfigureAwait(false);
 
+            // Jeżeli wartości pogody są różne od null to stwórz obiekt i przypisz mu odpowiednie pobrane wartości 
             if (results["weather"] != null)
             {
                 Weather weather = new Weather();

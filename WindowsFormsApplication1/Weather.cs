@@ -8,6 +8,7 @@ namespace WindowsFormsApplication1
 {
     class Weather
     {
+            // Metody do pobierania i ustawiania elemntów 
             public string Title { get; set; }
             public string Temperature { get; set; }
             public string Wind { get; set; }
@@ -15,7 +16,7 @@ namespace WindowsFormsApplication1
             public string Visibility { get; set; }
             public string Sunrise { get; set; }
             public string Sunset { get; set; }
-
+            // Konstruktor nadający metodom wartość pustego łańcucha znakowego
             public Weather()
             {
                 this.Title = " ";

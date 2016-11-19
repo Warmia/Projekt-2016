@@ -14,7 +14,7 @@ namespace WindowsFormsApplication1
             string key = "f8dc63a23acc6e0e69070a66a3c01c0a";
             string queryString = "http://api.openweathermap.org/data/2.5/weather?q="
                 + city + "," + country + ",us&appid=" + key + "&units=Metric";
-
+        
             dynamic results = await DataServices.getDataFromService(queryString).ConfigureAwait(false);
 
             // Jeżeli wartości pogody są różne od null to stwórz obiekt i przypisz mu odpowiednie pobrane wartości 

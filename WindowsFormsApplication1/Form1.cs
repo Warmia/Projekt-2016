@@ -31,6 +31,7 @@ namespace WindowsFormsApplication1
             Podpowiedź1.SetToolTip(this.textBox1, "Podaj miasto do wyszukania");
             System.Windows.Forms.ToolTip Podpowiedź2 = new System.Windows.Forms.ToolTip();
             Podpowiedź2.SetToolTip(this.textBox8, "Skrót państwa np. pl");
+            
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -53,6 +54,37 @@ namespace WindowsFormsApplication1
             tekst2 = textBox8.Text;
 
             Weather weather = await Class1.GetWeather(tekst1, tekst2);
+            switch (weather.Visibility)
+            {
+                case "Rain":
+                    weather.Visibility = "deszczowo";
+                    pictureBox1.Load("http://openweathermap.org/img/w/10d.png");
+                    break;
+
+                case "Clouds":
+                    weather.Visibility = "z chmurami";
+                    pictureBox1.Load("http://openweathermap.org/img/w/02d.png");
+                    break;
+
+                case "Clear":
+                    weather.Visibility = "bez chmurnie";
+                    pictureBox1.Load("http://openweathermap.org/img/w/01d.png");
+                    break;
+
+                case "Mist":
+                    weather.Visibility = "mglisto";
+                    pictureBox1.Load("http://openweathermap.org/img/w/50d.png");
+                    break;
+                case "Haze":
+                    weather.Visibility = "mglisto";
+                    pictureBox1.Load("http://openweathermap.org/img/w/50d.png");
+                    break;
+                case "Snow":
+                    weather.Visibility = "śnieżnie";
+                    pictureBox1.Load("http://openweathermap.org/img/w/13d.png");
+                    break;
+
+            }
             label9.Text = weather.Title;
             label11.Text = weather.Temperature;
             label14.Text = weather.Wind;
@@ -60,34 +92,14 @@ namespace WindowsFormsApplication1
             label15.Text = weather.Visibility;
             label13.Text = weather.Sunrise;
             label16.Text = weather.Sunset;
-            // zamiana obrazów, przy posiadaniu ich w odpowiednim miejscu, na dany przy odpowiednich warunkach pogodowych
-            if (weather.Visibility == "Rain")
-            {
-                weather.Visibility = "deszczowo";
-                pictureBox1.Load("C:\\Users\\samsung\\Desktop\\Obrazy\\Pogoda\\rain.png");
-            }
-            if (weather.Visibility == "Clouds")
-            {
-                weather.Visibility = "z chmurami";
-                pictureBox1.Load("C:\\Users\\samsung\\Desktop\\Obrazy\\Pogoda\\cloud (2).png");
-            }
-            if (weather.Visibility == "Clear")
-            {
-                weather.Visibility = "bez chmurnie";
-                pictureBox1.Load("C:\\Users\\samsung\\Desktop\\Obrazy\\Pogoda\\sunny.png");
-            }
-            if (weather.Visibility == "Mist")
-            {
-                weather.Visibility = "mglisto";
-                pictureBox1.Load("C:\\Users\\samsung\\Desktop\\Obrazy\\Pogoda\\haze.png");
-            }
-
+           
+           
             
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
-
+         
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -119,6 +131,27 @@ namespace WindowsFormsApplication1
                 }  
             
        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form2 load = new Form2();
+            load.ShowDialog();
+        }
+
+       
+
+       
+
+       
+
+        
+
+       
 
     }
 }

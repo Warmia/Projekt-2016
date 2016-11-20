@@ -86,7 +86,6 @@
       <DependentUpon>FormUżytkownika.cs</DependentUpon>
     </Compile>
     <Compile Include="IFile.cs" />
-    <Compile Include="Notatnik.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Weather.cs" />

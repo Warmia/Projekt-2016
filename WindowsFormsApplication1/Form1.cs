@@ -48,51 +48,58 @@ namespace WindowsFormsApplication1
         {
            
             //Pobieranie po kliknieciu dla miasta danych pogodowych
+            
             string tekst1;
             tekst1 = textBox1.Text;
             string tekst2;
             tekst2 = textBox8.Text;
 
-            Weather weather = await Class1.GetWeather(tekst1, tekst2);
-            switch (weather.Visibility)
+            try
             {
-                case "Rain":
-                    weather.Visibility = "deszczowo";
-                    pictureBox1.Load("http://openweathermap.org/img/w/10d.png");
-                    break;
+                Weather weather = await Class1.GetWeather(tekst1, tekst2);
+                switch (weather.Visibility)
+                {
+                    case "Rain":
+                        weather.Visibility = "deszczowo";
+                        pictureBox1.Load("http://openweathermap.org/img/w/10d.png");
+                        break;
 
-                case "Clouds":
-                    weather.Visibility = "z chmurami";
-                    pictureBox1.Load("http://openweathermap.org/img/w/02d.png");
-                    break;
+                    case "Clouds":
+                        weather.Visibility = "z chmurami";
+                        pictureBox1.Load("http://openweathermap.org/img/w/02d.png");
+                        break;
 
-                case "Clear":
-                    weather.Visibility = "bez chmurnie";
-                    pictureBox1.Load("http://openweathermap.org/img/w/01d.png");
-                    break;
+                    case "Clear":
+                        weather.Visibility = "bez chmurnie";
+                        pictureBox1.Load("http://openweathermap.org/img/w/01d.png");
+                        break;
 
-                case "Mist":
-                    weather.Visibility = "mglisto";
-                    pictureBox1.Load("http://openweathermap.org/img/w/50d.png");
-                    break;
-                case "Haze":
-                    weather.Visibility = "mglisto";
-                    pictureBox1.Load("http://openweathermap.org/img/w/50d.png");
-                    break;
-                case "Snow":
-                    weather.Visibility = "śnieżnie";
-                    pictureBox1.Load("http://openweathermap.org/img/w/13d.png");
-                    break;
+                    case "Mist":
+                        weather.Visibility = "mglisto";
+                        pictureBox1.Load("http://openweathermap.org/img/w/50d.png");
+                        break;
+                    case "Haze":
+                        weather.Visibility = "mglisto";
+                        pictureBox1.Load("http://openweathermap.org/img/w/50d.png");
+                        break;
+                    case "Snow":
+                        weather.Visibility = "śnieżnie";
+                        pictureBox1.Load("http://openweathermap.org/img/w/13d.png");
+                        break;
 
+                }
+                label9.Text = weather.Title;
+                label11.Text = weather.Temperature;
+                label14.Text = weather.Wind;
+                label12.Text = weather.Humidity;
+                label15.Text = weather.Visibility;
+                label13.Text = weather.Sunrise;
+                label16.Text = weather.Sunset;
             }
-            label9.Text = weather.Title;
-            label11.Text = weather.Temperature;
-            label14.Text = weather.Wind;
-            label12.Text = weather.Humidity;
-            label15.Text = weather.Visibility;
-            label13.Text = weather.Sunrise;
-            label16.Text = weather.Sunset;
-           
+            catch
+            {
+                MessageBox.Show("Nie wprowadzano danych!", "Błąd pobierania", MessageBoxButtons.OKCancel,MessageBoxIcon.Warning);
+            }
            
             
         }

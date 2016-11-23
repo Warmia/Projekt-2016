@@ -336,7 +336,7 @@
             this.groupBox1.Size = new System.Drawing.Size(535, 135);
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Dzisiejsza pogoda";
+            this.groupBox1.Text = "Obecna pogoda";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // Form1

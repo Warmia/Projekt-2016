@@ -30,11 +30,23 @@ namespace WindowsFormsApplication1
 
 
 
-        private void btnForecast_Click(object sender, EventArgs e)
+       
+
+        private void Form2_Load_1(object sender, EventArgs e)
+        {
+            label1.Text = Form1.SetValue;
+        }
+
+        private void lvwTemps_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
             Cursor = Cursors.WaitCursor;
 
-            string url = ForecastUrl.Replace("@LOC@", txtLocation.Text);
+            string url = ForecastUrl.Replace("@LOC@", label1.Text);
             XmlDocument xml_doc;
             using (WebClient client = new WebClient())
             {
@@ -53,21 +65,21 @@ namespace WindowsFormsApplication1
         {
             lvwTemps.Items.Clear();
 
-            
+
             string last_day = "";
             foreach (XmlNode time_node in xml_doc.SelectNodes("//time"))
             {
-                
+
                 XmlAttribute time_attr = time_node.Attributes["from"];
                 DateTime start_time = DateTime.Parse(time_attr.Value);
 
-                
+
                 start_time = start_time.ToLocalTime();
 
-                
+
                 start_time += new TimeSpan(1, 30, 0);
 
-                
+
                 XmlNode temp_node = time_node.SelectSingleNode("temperature");
                 XmlAttribute temp_attr = temp_node.Attributes["value"];
                 float temp = 0;

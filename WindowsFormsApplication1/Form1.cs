@@ -13,6 +13,8 @@ namespace WindowsFormsApplication1
 {
     public partial class Form1 : Form, IFile
     {
+        public static string SetValue = "";
+
         public Form1()
         {
             InitializeComponent();
@@ -95,6 +97,9 @@ namespace WindowsFormsApplication1
                 label15.Text = weather.Visibility;
                 label13.Text = weather.Sunrise;
                 label16.Text = weather.Sunset;
+
+                SetValue = label9.Text;
+              
             }
             catch
             {

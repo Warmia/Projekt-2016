@@ -33,6 +33,7 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -45,10 +46,11 @@
             this.lvwTemps.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
-            this.columnHeader3});
-            this.lvwTemps.Location = new System.Drawing.Point(15, 89);
+            this.columnHeader3,
+            this.columnHeader4});
+            this.lvwTemps.Location = new System.Drawing.Point(12, 89);
             this.lvwTemps.Name = "lvwTemps";
-            this.lvwTemps.Size = new System.Drawing.Size(269, 244);
+            this.lvwTemps.Size = new System.Drawing.Size(333, 244);
             this.lvwTemps.TabIndex = 24;
             this.lvwTemps.UseCompatibleStateImageBehavior = false;
             this.lvwTemps.View = System.Windows.Forms.View.Details;
@@ -57,18 +59,25 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Dzień";
-            this.columnHeader1.Width = 100;
+            this.columnHeader1.Width = 85;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Czas";
             this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.columnHeader2.Width = 41;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Temperatura";
             this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.columnHeader3.Width = 91;
+            this.columnHeader3.Width = 78;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Predkość Wiatru";
+            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.columnHeader4.Width = 104;
             // 
             // label1
             // 
@@ -116,6 +125,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
     }

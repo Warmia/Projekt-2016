@@ -87,6 +87,13 @@ namespace WindowsFormsApplication1
                 {
                     temp = float.Parse(temp_attr.Value.ToString(), CultureInfo.InvariantCulture);
                 }
+                XmlNode wind_node = time_node.SelectSingleNode("windSpeed");
+                XmlAttribute wind_attr = wind_node.Attributes["mps"];
+                float wind = 0;
+                if (wind_attr != null)
+                {
+                    wind = float.Parse(wind_attr.Value.ToString(), CultureInfo.InvariantCulture);
+                }
 
                 ListViewItem item;
                 if (start_time.DayOfWeek.ToString() == last_day)
@@ -100,6 +107,7 @@ namespace WindowsFormsApplication1
                 }
                 item.SubItems.Add(start_time.ToShortTimeString());
                 item.SubItems.Add(temp.ToString("0.00"));
+                item.SubItems.Add(wind.ToString("0.00"));
             }
         }
 

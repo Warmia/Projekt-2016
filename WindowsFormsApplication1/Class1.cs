@@ -23,7 +23,7 @@ namespace WindowsFormsApplication1
                 Weather weather = new Weather();
                 weather.Title = (string)results["name"];
                 weather.Temperature = (string)results["main"]["temp"] + " °C";
-                weather.Wind = (string)results["wind"]["speed"] + " km/h";
+                weather.Wind = (string)results["wind"]["speed"] + " m/s";
                 weather.Humidity = (string)results["main"]["humidity"] + " %";
                 weather.Visibility = (string)results["weather"][0]["main"];
 

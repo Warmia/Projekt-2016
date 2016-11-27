@@ -34,6 +34,7 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -47,10 +48,11 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
-            this.columnHeader4});
+            this.columnHeader4,
+            this.columnHeader5});
             this.lvwTemps.Location = new System.Drawing.Point(12, 89);
             this.lvwTemps.Name = "lvwTemps";
-            this.lvwTemps.Size = new System.Drawing.Size(333, 244);
+            this.lvwTemps.Size = new System.Drawing.Size(417, 244);
             this.lvwTemps.TabIndex = 24;
             this.lvwTemps.UseCompatibleStateImageBehavior = false;
             this.lvwTemps.View = System.Windows.Forms.View.Details;
@@ -75,9 +77,15 @@
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "Predkość Wiatru";
+            this.columnHeader4.Text = "Wiatr";
             this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.columnHeader4.Width = 104;
+            this.columnHeader4.Width = 40;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Wilgotność";
+            this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.columnHeader5.Width = 74;
             // 
             // label1
             // 
@@ -126,6 +134,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
     }

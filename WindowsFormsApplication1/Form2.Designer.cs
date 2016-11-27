@@ -52,7 +52,7 @@
             this.columnHeader5});
             this.lvwTemps.Location = new System.Drawing.Point(12, 89);
             this.lvwTemps.Name = "lvwTemps";
-            this.lvwTemps.Size = new System.Drawing.Size(417, 244);
+            this.lvwTemps.Size = new System.Drawing.Size(396, 244);
             this.lvwTemps.TabIndex = 24;
             this.lvwTemps.UseCompatibleStateImageBehavior = false;
             this.lvwTemps.View = System.Windows.Forms.View.Details;
@@ -120,7 +120,7 @@
             this.Controls.Add(this.lvwTemps);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
-            this.Text = "Aplikacja";
+            this.Text = "Aplikacja pogodowa";
             this.Load += new System.EventHandler(this.Form2_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();

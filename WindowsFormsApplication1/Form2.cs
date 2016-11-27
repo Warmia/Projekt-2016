@@ -78,8 +78,7 @@ namespace WindowsFormsApplication1
 
 
                 start_time += new TimeSpan(1, 30, 0);
-
-
+                
                 XmlNode temp_node = time_node.SelectSingleNode("temperature");
                 XmlAttribute temp_attr = temp_node.Attributes["value"];
                 float temp = 0;
@@ -102,13 +101,37 @@ namespace WindowsFormsApplication1
                     humidity = float.Parse(humidity_attr.Value.ToString(), CultureInfo.InvariantCulture);
                 }
                 ListViewItem item;
+                switch (start_time.DayOfWeek.ToString())
+                {
+                    case "Monday":
+                    last_day = "Poniedziałek";
+                    break;
+                    case "Tuesday":
+                    last_day = "Wtorek";
+                    break;
+                    case "Wednesday":
+                    last_day = "Środa";
+                    break;
+                    case "Thursday":
+                    last_day = "Czwartek";
+                    break;
+                    case "Friday":
+                    last_day = "Piątek";
+                    break;
+                    case "Saturday":
+                    last_day = "Sobota";
+                    break;
+                    case "Sunday":
+                    last_day = "Niedziela";
+                    break;
+                }
                 if (start_time.DayOfWeek.ToString() == last_day)
                 {
                     item = lvwTemps.Items.Add("");
                 }
                 else
                 {
-                    last_day = start_time.DayOfWeek.ToString();
+                    
                     item = lvwTemps.Items.Add(last_day);
                 }
                 item.SubItems.Add(start_time.ToShortTimeString());

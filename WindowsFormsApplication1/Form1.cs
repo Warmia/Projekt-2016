@@ -18,7 +18,7 @@ namespace WindowsFormsApplication1
         public Form1()
         {
             InitializeComponent();
-            this.Text = "Sample Weather App";
+            this.Text = "Aplikacja pogodowa";
             button1.Click += button1_Click_1;
 
             

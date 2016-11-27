@@ -67,25 +67,25 @@
             // 
             this.columnHeader2.Text = "Czas";
             this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.columnHeader2.Width = 41;
+            this.columnHeader2.Width = 43;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "Temperatura";
+            this.columnHeader3.Text = "Temperatura[°C]";
             this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.columnHeader3.Width = 78;
+            this.columnHeader3.Width = 94;
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "Wiatr";
+            this.columnHeader4.Text = "Wiatr[m/s]";
             this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.columnHeader4.Width = 40;
+            this.columnHeader4.Width = 63;
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "Wilgotność";
+            this.columnHeader5.Text = "Wilgotność[%]";
             this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.columnHeader5.Width = 74;
+            this.columnHeader5.Width = 83;
             // 
             // label1
             // 

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class Form1 : Form, IFile
+    public partial class Form1 : Form, IInterakcja1
     {
         public static string SetValue = "";
 
@@ -26,7 +26,7 @@ namespace WindowsFormsApplication1
         }
        
 
-        private void Form1_Load(object sender, EventArgs e)
+        public void Form1_Load(object sender, EventArgs e)
         {
             //Podpowiedzi do pól tekstowych wprowadzania danych
             System.Windows.Forms.ToolTip Podpowiedź1 = new System.Windows.Forms.ToolTip();
@@ -50,7 +50,7 @@ namespace WindowsFormsApplication1
         {
            
             //Pobieranie po kliknieciu dla miasta danych pogodowych
-            
+
             string tekst1;
             tekst1 = textBox1.Text;
             string tekst2;
@@ -58,7 +58,7 @@ namespace WindowsFormsApplication1
 
             try
             {
-                Weather weather = await Class1.GetWeather(tekst1, tekst2);
+                Weather weather = await Połączenie.GetWeather(tekst1, tekst2);
                 switch (weather.Visibility)
                 {
                     case "Rain":
@@ -101,7 +101,7 @@ namespace WindowsFormsApplication1
                 SetValue = label9.Text;
               
             }
-            catch
+            catch 
             {
                 MessageBox.Show("Nie wprowadzano danych!", "Błąd pobierania", MessageBoxButtons.OKCancel,MessageBoxIcon.Warning);
             }
@@ -149,7 +149,7 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        public void button2_Click(object sender, EventArgs e)
         {
             Form2 load = new Form2();
             load.ShowDialog();

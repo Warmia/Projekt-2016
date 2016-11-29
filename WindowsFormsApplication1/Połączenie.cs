@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApplication1
 {
-    class Class1
+    class Połączenie
     {
         public static async Task<Weather> GetWeather(string city,string country)
         {

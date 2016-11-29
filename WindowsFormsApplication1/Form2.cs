@@ -14,7 +14,7 @@ using System.Globalization;
 
 namespace WindowsFormsApplication1
 {
-    public partial class Form2 : Form
+    public partial class Form2 : Form, IInterakcja2
     {
         public Form2()
         {
@@ -32,7 +32,7 @@ namespace WindowsFormsApplication1
 
        
 
-        private void Form2_Load_1(object sender, EventArgs e)
+        public void Form2_Load_1(object sender, EventArgs e)
         {
             label1.Text = Form1.SetValue;
         }
@@ -42,26 +42,34 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        public void button2_Click(object sender, EventArgs e)
         {
             Cursor = Cursors.WaitCursor;
 
             string url = ForecastUrl.Replace("@LOC@", label1.Text);
             XmlDocument xml_doc;
-            using (WebClient client = new WebClient())
+            try
             {
-                
-                string xml = client.DownloadString(url);
+                using (WebClient client = new WebClient())
+                {
 
-                
-                xml_doc = new XmlDocument();
-                xml_doc.LoadXml(xml);
+                    string xml = client.DownloadString(url);
+
+
+                    xml_doc = new XmlDocument();
+                    xml_doc.LoadXml(xml);
+                }
+
+
+                ListTemperatures(xml_doc);
             }
-            ListTemperatures(xml_doc);
-
+            catch
+            {
+                MessageBox.Show("Nie wprowadzano danych!", "Błąd pobierania", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            }
             Cursor = Cursors.Default; 
         }
-        private void ListTemperatures(XmlDocument xml_doc)
+        public void ListTemperatures(XmlDocument xml_doc)
         {
             lvwTemps.Items.Clear();
 

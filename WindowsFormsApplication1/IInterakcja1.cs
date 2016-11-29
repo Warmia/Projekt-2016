@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApplication1
 {
-    interface IFile
+    interface IInterakcja1
     {
+        
+        void Form1_Load(object sender, EventArgs e);
         void toolStripMenuItem1_Click(object sender, EventArgs e);
+        void button2_Click(object sender, EventArgs e);
     }
 }

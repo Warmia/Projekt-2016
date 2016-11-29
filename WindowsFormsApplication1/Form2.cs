@@ -25,6 +25,7 @@ namespace WindowsFormsApplication1
         {
             
         }
+        // Klucz programu i link do prognozy pogody 5dni/3godziny
         private const string API_KEY = "f8dc63a23acc6e0e69070a66a3c01c0a";
         private const string ForecastUrl = "http://api.openweathermap.org/data/2.5/forecast?" + "q=@LOC@&mode=xml&units=Metric&APPID=" + API_KEY;
 
@@ -34,6 +35,7 @@ namespace WindowsFormsApplication1
 
         public void Form2_Load_1(object sender, EventArgs e)
         {
+            // Ustawienie automatycznie nazwy miejscowości z pierwszej strony programu na drugiej stronie
             label1.Text = Form1.SetValue;
         }
 
@@ -44,6 +46,7 @@ namespace WindowsFormsApplication1
 
         public void button2_Click(object sender, EventArgs e)
         {
+            //Po kliknieciu pobranie pliku w formacie xml z strony i sprawdzenie poprawności wczytania danych
             Cursor = Cursors.WaitCursor;
 
             string url = ForecastUrl.Replace("@LOC@", label1.Text);
@@ -77,7 +80,7 @@ namespace WindowsFormsApplication1
             string last_day = "";
             foreach (XmlNode time_node in xml_doc.SelectNodes("//time"))
             {
-
+                // Uzyskanie z pliku xml fragmentu odpowiadającego za czas i m.in. konwersja czasu do lokalnej jej wersji
                 XmlAttribute time_attr = time_node.Attributes["from"];
                 DateTime start_time = DateTime.Parse(time_attr.Value);
 
@@ -86,7 +89,8 @@ namespace WindowsFormsApplication1
 
 
                 start_time += new TimeSpan(1, 30, 0);
-                
+
+                //Uzyskanie z pliku xml fragmentu odpowiadającego za wartość temperatury 
                 XmlNode temp_node = time_node.SelectSingleNode("temperature");
                 XmlAttribute temp_attr = temp_node.Attributes["value"];
                 float temp = 0;
@@ -94,6 +98,7 @@ namespace WindowsFormsApplication1
                 {
                     temp = float.Parse(temp_attr.Value.ToString(), CultureInfo.InvariantCulture);
                 }
+                //Uzyskanie z pliku xml fragmentu odpowiadającego za wartość predkości wiatru
                 XmlNode wind_node = time_node.SelectSingleNode("windSpeed");
                 XmlAttribute wind_attr = wind_node.Attributes["mps"];
                 float wind = 0;
@@ -101,6 +106,7 @@ namespace WindowsFormsApplication1
                 {
                     wind = float.Parse(wind_attr.Value.ToString(), CultureInfo.InvariantCulture);
                 }
+                //Uzyskanie z pliku xml fragmentu odpowiadającego za wartość wilgotności
                 XmlNode humidity_node = time_node.SelectSingleNode("humidity");
                 XmlAttribute humidity_attr = humidity_node.Attributes["value"];
                 float humidity = 0;
@@ -109,6 +115,7 @@ namespace WindowsFormsApplication1
                     humidity = float.Parse(humidity_attr.Value.ToString(), CultureInfo.InvariantCulture);
                 }
                 ListViewItem item;
+                //Uzyskanie z daty dnia tygodnia idodanie go do programu
                 switch (start_time.DayOfWeek.ToString())
                 {
                     case "Monday":
@@ -142,6 +149,7 @@ namespace WindowsFormsApplication1
                     
                     item = lvwTemps.Items.Add(last_day);
                 }
+                //Ustawienie formatu wyświetlanych danych
                 item.SubItems.Add(start_time.ToShortTimeString());
                 item.SubItems.Add(temp.ToString("0.00"));
                 item.SubItems.Add(wind.ToString("0.00"));

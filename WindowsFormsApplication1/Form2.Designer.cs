@@ -52,7 +52,7 @@
             this.columnHeader5});
             this.lvwTemps.Location = new System.Drawing.Point(12, 89);
             this.lvwTemps.Name = "lvwTemps";
-            this.lvwTemps.Size = new System.Drawing.Size(396, 244);
+            this.lvwTemps.Size = new System.Drawing.Size(365, 244);
             this.lvwTemps.TabIndex = 24;
             this.lvwTemps.UseCompatibleStateImageBehavior = false;
             this.lvwTemps.View = System.Windows.Forms.View.Details;
@@ -101,9 +101,9 @@
             // button2
             // 
             this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.Location = new System.Drawing.Point(300, 12);
+            this.button2.Location = new System.Drawing.Point(411, 23);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(178, 41);
+            this.button2.Size = new System.Drawing.Size(172, 41);
             this.button2.TabIndex = 30;
             this.button2.Text = "Wyświetl nstepnę dni";
             this.button2.UseVisualStyleBackColor = true;

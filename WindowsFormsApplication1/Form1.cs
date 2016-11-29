@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+// Biblioteki do m.in. do operacji nad plikiem, czy tworzenia okna aplikacji
 
 namespace WindowsFormsApplication1
 {
@@ -17,6 +18,7 @@ namespace WindowsFormsApplication1
 
         public Form1()
         {
+            // Inicjalizacja wszystkich elemntów i nadanie nazwy programowi
             InitializeComponent();
             this.Text = "Aplikacja pogodowa";
             button1.Click += button1_Click_1;
@@ -50,7 +52,7 @@ namespace WindowsFormsApplication1
         {
            
             //Pobieranie po kliknieciu dla miasta danych pogodowych
-
+            //Sprawdzenie przy tym czy klient wpisał dane
             string tekst1;
             tekst1 = textBox1.Text;
             string tekst2;
@@ -61,6 +63,7 @@ namespace WindowsFormsApplication1
                 Weather weather = await Połączenie.GetWeather(tekst1, tekst2);
                 switch (weather.Visibility)
                 {
+                        // Pobranie w zależności od warunkó pogodowych odpowiedniego zdjęcia
                     case "Rain":
                         weather.Visibility = "deszczowo";
                         pictureBox1.Load("http://openweathermap.org/img/w/10d.png");
@@ -151,6 +154,7 @@ namespace WindowsFormsApplication1
 
         public void button2_Click(object sender, EventArgs e)
         {
+            // Po kliknieciu przycisku uruchomienie fragmentu z prognozą pogody na kolejne dni
             Form2 load = new Form2();
             load.ShowDialog();
         }

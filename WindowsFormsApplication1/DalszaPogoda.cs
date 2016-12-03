@@ -14,16 +14,20 @@ using System.Globalization;
 
 namespace WindowsFormsApplication1
 {
-    public partial class Form2 : Form, IInterakcja2
+    public partial class DalszaPogoda : Form, IInterakcja2
     {
-        public Form2()
+        public DalszaPogoda()
         {
             InitializeComponent();
         }
-
+        double fuction(double x)
+        {
+            return (Math.Pow(x, 2) + 2 * Math.Sin(2 * x));
+        }
         private  void Form2_Load(object sender, EventArgs e)
         {
             
+
         }
         // Klucz programu i link do prognozy pogody 5dni/3godziny
         private const string API_KEY = "f8dc63a23acc6e0e69070a66a3c01c0a";
@@ -36,7 +40,7 @@ namespace WindowsFormsApplication1
         public void Form2_Load_1(object sender, EventArgs e)
         {
             // Ustawienie automatycznie nazwy miejscowości z pierwszej strony programu na drugiej stronie
-            label1.Text = Form1.SetValue;
+            label1.Text = ObecnaPogoda.SetValue;
         }
 
         private void lvwTemps_SelectedIndexChanged(object sender, EventArgs e)
@@ -70,12 +74,23 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show("Nie wprowadzano danych!", "Błąd pobierania", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
-            Cursor = Cursors.Default; 
+            Cursor = Cursors.Default;
+
+            WeatherChart.ChartAreas[0].AxisY.ScaleView.Zoom(-15, 15);
+            WeatherChart.ChartAreas[0].AxisX.ScaleView.Zoom(-15, 2);
+            WeatherChart.ChartAreas[0].CursorX.IsUserEnabled = true;
+            WeatherChart.ChartAreas[0].CursorX.IsUserSelectionEnabled = true;
+            WeatherChart.ChartAreas[0].AxisX.ScaleView.Zoomable = true;
+            for (int i = -15; i < 2; i++)
+            {
+                WeatherChart.Series[0].Points.AddXY(i, fuction(i));
+                WeatherChart.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+
+            }
         }
         public void ListTemperatures(XmlDocument xml_doc)
         {
             lvwTemps.Items.Clear();
-
 
             string last_day = "";
             foreach (XmlNode time_node in xml_doc.SelectNodes("//time"))
@@ -156,7 +171,5 @@ namespace WindowsFormsApplication1
                 item.SubItems.Add(humidity.ToString("0.00"));
             }
         }
-
-
     }
 }

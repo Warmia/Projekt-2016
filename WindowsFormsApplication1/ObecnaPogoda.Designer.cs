@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication1
 {
-    partial class Form1
+    partial class ObecnaPogoda
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ObecnaPogoda));
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -136,7 +136,6 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(0, 39);
             this.label9.TabIndex = 15;
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // button2
             // 
@@ -166,7 +165,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(67, 49);
             this.pictureBox1.TabIndex = 37;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // toolStrip1
             // 
@@ -196,13 +194,15 @@
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
             this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 22);
             this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.ToolTipText = "Notatnik";
+            
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem1.Text = "Zapisz ";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            
             // 
             // toolStripSeparator1
             // 
@@ -337,7 +337,6 @@
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Obecna pogoda";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // Form1
             // 
@@ -370,15 +369,9 @@
 
         }
 
-        private void pictureBox2_Click(object sender, System.EventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
+        
 
-        private void pictureBox1_Click(object sender, System.EventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
+       
 
         #endregion
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApplication1
 {
-    class Weather
+    class ZmiennePogoda
     {
             // Metody do pobierania i ustawiania elemntów 
             public string Title { get; set; }
@@ -17,7 +17,7 @@ namespace WindowsFormsApplication1
             public string Sunrise { get; set; }
             public string Sunset { get; set; }
             // Konstruktor nadający metodom wartość pustego łańcucha znakowego
-            public Weather()
+            public ZmiennePogoda()
             {
                 this.Title = " ";
                 this.Temperature = " ";

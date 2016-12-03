@@ -8,9 +8,9 @@ using System.Net.Http;
 
 namespace WindowsFormsApplication1
 {
-    class DataServices
+    class PobieraniePogody 
     {
-        public static async Task<dynamic> getDataFromService(string queryString)
+            public static async Task<dynamic> getDataFromService(string queryString)
             {
                 // Stworzenie obiektu client klasy HttpClient i zmiennej response zawierającej odpowiedź na zapytanie queryString
                 HttpClient client = new HttpClient();

@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApplication1
 {
-    class Połączenie
+    class UzyskiwanieWartości : AbstrakcyjneWartości 
     {
-        public static async Task<Weather> GetWeather(string city,string country)
+        override public  async Task<ZmiennePogoda> GetWeather(string city,string country)
         {
             // Darmowy klucz dostępu oraz zapytanie do strony
             string key = "f8dc63a23acc6e0e69070a66a3c01c0a";
             string queryString = "http://api.openweathermap.org/data/2.5/weather?q="
-                + city + "," + country + "&appid=" + key + "&units=Metric";
+                + city + "," + country + "&appid=" + key + "&units=metric";
             
-            dynamic results = await DataServices.getDataFromService(queryString).ConfigureAwait(false);
+            dynamic results = await PobieraniePogody.getDataFromService(queryString).ConfigureAwait(false);
 
             // Jeżeli wartości pogody są różne od null to stwórz obiekt i przypisz mu odpowiednie pobrane wartości 
             if (results["weather"] != null)
             {
-                Weather weather = new Weather();
+                ZmiennePogoda weather = new ZmiennePogoda();
                 weather.Title = (string)results["name"];
                 weather.Temperature = (string)results["main"]["temp"] + " °C";
                 weather.Wind = (string)results["wind"]["speed"] + " m/s";

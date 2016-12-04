@@ -32,6 +32,7 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.lvwTemps = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -119,18 +120,23 @@
             chartArea1.Name = "ChartArea1";
             this.WeatherChart.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
+            legend1.Title = "Oznaczenie";
             this.WeatherChart.Legends.Add(legend1);
             this.WeatherChart.Location = new System.Drawing.Point(437, 89);
             this.WeatherChart.Name = "WeatherChart";
             series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
+            series1.Name = "Temperatura";
             this.WeatherChart.Series.Add(series1);
             this.WeatherChart.Size = new System.Drawing.Size(277, 312);
             this.WeatherChart.TabIndex = 31;
             this.WeatherChart.Text = "chart1";
+            title1.Name = "Title1";
+            title1.Text = "Wykres Temperatury";
+            this.WeatherChart.Titles.Add(title1);
             // 
-            // Form2
+            // DalszaPogoda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -141,7 +147,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lvwTemps);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form2";
+            this.Name = "DalszaPogoda";
             this.Text = "Aplikacja pogodowa";
             this.Load += new System.EventHandler(this.Form2_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.WeatherChart)).EndInit();

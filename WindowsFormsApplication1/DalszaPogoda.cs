@@ -20,10 +20,6 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
-        double fuction(double x)
-        {
-            return (Math.Pow(x, 2) + 2 * Math.Sin(2 * x));
-        }
         private  void Form2_Load(object sender, EventArgs e)
         {
             
@@ -75,18 +71,8 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("Nie wprowadzano danych!", "Błąd pobierania", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
             Cursor = Cursors.Default;
-
-            WeatherChart.ChartAreas[0].AxisY.ScaleView.Zoom(-15, 15);
-            WeatherChart.ChartAreas[0].AxisX.ScaleView.Zoom(-15, 2);
-            WeatherChart.ChartAreas[0].CursorX.IsUserEnabled = true;
-            WeatherChart.ChartAreas[0].CursorX.IsUserSelectionEnabled = true;
-            WeatherChart.ChartAreas[0].AxisX.ScaleView.Zoomable = true;
-            for (int i = -15; i < 2; i++)
-            {
-                WeatherChart.Series[0].Points.AddXY(i, fuction(i));
-                WeatherChart.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-
-            }
+            
+            
         }
         public void ListTemperatures(XmlDocument xml_doc)
         {
@@ -104,6 +90,7 @@ namespace WindowsFormsApplication1
 
 
                 start_time += new TimeSpan(1, 30, 0);
+                string  day = start_time.DayOfWeek.ToString();
 
                 //Uzyskanie z pliku xml fragmentu odpowiadającego za wartość temperatury 
                 XmlNode temp_node = time_node.SelectSingleNode("temperature");
@@ -130,46 +117,57 @@ namespace WindowsFormsApplication1
                     humidity = float.Parse(humidity_attr.Value.ToString(), CultureInfo.InvariantCulture);
                 }
                 ListViewItem item;
-                //Uzyskanie z daty dnia tygodnia idodanie go do programu
-                switch (start_time.DayOfWeek.ToString())
+                //Uzyskanie z daty dnia tygodnia i dodanie go do programu
+                switch (day)
                 {
                     case "Monday":
-                    last_day = "Poniedziałek";
+                    day = "Poniedziałek";
                     break;
                     case "Tuesday":
-                    last_day = "Wtorek";
+                    day = "Wtorek";
                     break;
                     case "Wednesday":
-                    last_day = "Środa";
+                    day = "Środa";
                     break;
                     case "Thursday":
-                    last_day = "Czwartek";
+                    day = "Czwartek";
                     break;
                     case "Friday":
-                    last_day = "Piątek";
+                    day = "Piątek";
                     break;
                     case "Saturday":
-                    last_day = "Sobota";
+                    day = "Sobota";
                     break;
                     case "Sunday":
-                    last_day = "Niedziela";
+                    day = "Niedziela";
                     break;
                 }
-                if (start_time.DayOfWeek.ToString() == last_day)
+                if (day == last_day)
                 {
                     item = lvwTemps.Items.Add("");
                 }
                 else
                 {
                     
-                    item = lvwTemps.Items.Add(last_day);
+                    item = lvwTemps.Items.Add(day);
                 }
                 //Ustawienie formatu wyświetlanych danych
                 item.SubItems.Add(start_time.ToShortTimeString());
                 item.SubItems.Add(temp.ToString("0.00"));
                 item.SubItems.Add(wind.ToString("0.00"));
                 item.SubItems.Add(humidity.ToString("0.00"));
+
+                
+                
+                WeatherChart.ChartAreas[0].CursorX.IsUserEnabled = true;
+                WeatherChart.ChartAreas[0].CursorX.IsUserSelectionEnabled = true;
+                WeatherChart.ChartAreas[0].AxisX.ScaleView.Zoomable = true;
+                WeatherChart.Series[0].Points.AddXY(day + " " + start_time.ToShortTimeString(), temp);
+                WeatherChart.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+
+                
             }
+           
         }
     }
 }

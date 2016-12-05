@@ -32,6 +32,7 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.lvwTemps = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -117,6 +118,8 @@
             // 
             // WeatherChart
             // 
+            chartArea1.AxisX.Title = "Czas";
+            chartArea1.AxisY.Title = "Temperatura[°C] / Wiatr[m/s]";
             chartArea1.Name = "ChartArea1";
             this.WeatherChart.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
@@ -128,12 +131,18 @@
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series1.Legend = "Legend1";
             series1.Name = "Temperatura";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Color = System.Drawing.Color.DarkGreen;
+            series2.Legend = "Legend1";
+            series2.Name = "Predkość Wiatru";
             this.WeatherChart.Series.Add(series1);
+            this.WeatherChart.Series.Add(series2);
             this.WeatherChart.Size = new System.Drawing.Size(277, 312);
             this.WeatherChart.TabIndex = 31;
             this.WeatherChart.Text = "chart1";
             title1.Name = "Title1";
-            title1.Text = "Wykres Temperatury";
+            title1.Text = "Wykres Pogody";
             this.WeatherChart.Titles.Add(title1);
             // 
             // DalszaPogoda

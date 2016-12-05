@@ -164,8 +164,8 @@ namespace WindowsFormsApplication1
                 WeatherChart.ChartAreas[0].AxisX.ScaleView.Zoomable = true;
                 WeatherChart.Series[0].Points.AddXY(day + " " + start_time.ToShortTimeString(), temp);
                 WeatherChart.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-
-                
+                WeatherChart.Series[1].Points.AddXY(day + " " + start_time.ToShortTimeString(), wind);
+                WeatherChart.Series[1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             }
            
         }

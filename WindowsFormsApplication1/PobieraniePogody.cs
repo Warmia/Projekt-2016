@@ -10,22 +10,22 @@ namespace WindowsFormsApplication1
 {
     class PobieraniePogody 
     {
-            public static async Task<dynamic> getDataFromService(string queryString)
+            public static async Task<dynamic> otrzymajDane(string tekstZapytania)
             {
                 // Stworzenie obiektu client klasy HttpClient i zmiennej response zawierającej odpowiedź na zapytanie queryString
-                HttpClient client = new HttpClient();
-                var response = await client.GetAsync(queryString);
+                HttpClient klient = new HttpClient();
+                var odpowiedź = await klient.GetAsync(tekstZapytania);
                 
 
                 // Pobieranie przy pomocy json obecnych danych
-                dynamic data = null;
-                if (response != null)
+                dynamic dane = null;
+                if (odpowiedź != null)
                 {
-                    string json = response.Content.ReadAsStringAsync().Result;
-                    data = JsonConvert.DeserializeObject(json);
+                    string json = odpowiedź.Content.ReadAsStringAsync().Result;
+                    dane = JsonConvert.DeserializeObject(json);
                 }
 
-                return data;
+                return dane;
             }
      
         

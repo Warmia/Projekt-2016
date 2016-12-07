@@ -7,10 +7,10 @@ using System.Xml;
 
 namespace WindowsFormsApplication1
 {
-    interface IInterakcja2
+    interface IDalszaPogoda
     {
         void Form2_Load_1(object sender, EventArgs e);
         void button2_Click(object sender, EventArgs e);
-        void ListTemperatures(XmlDocument xml_doc);
+        void ListaTemperatur(XmlDocument xml_doc);
     }
 }

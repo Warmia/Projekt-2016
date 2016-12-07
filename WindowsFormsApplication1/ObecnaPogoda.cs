@@ -14,7 +14,7 @@ namespace WindowsFormsApplication1
 {
     public partial class ObecnaPogoda : Form, IObecnaPogoda
     {
-        public static string SetValue = "";
+        public static string UstawWartość = "";
 
         public ObecnaPogoda()
         {
@@ -43,48 +43,48 @@ namespace WindowsFormsApplication1
             try
             {
                 UzyskiwanieWartości uzyskano = new UzyskiwanieWartości();
-                ZmiennePogoda weather = await uzyskano.GetWeather(tekst1, tekst2);
-                switch (weather.Visibility)
+                ZmiennePogoda pogoda = await uzyskano.OtrzymajPogodę(tekst1, tekst2);
+                switch (pogoda.Widoczność)
                 {
                     // Pobranie w zależności od warunków pogodowych odpowiedniego zdjęcia
                     case "Rain":
-                        weather.Visibility = "deszczowo";
+                        pogoda.Widoczność = "deszczowo";
                         pictureBox1.Load("http://openweathermap.org/img/w/10d.png");
                         break;
 
                     case "Clouds":
-                        weather.Visibility = "z chmurami";
+                        pogoda.Widoczność = "z chmurami";
                         pictureBox1.Load("http://openweathermap.org/img/w/02d.png");
                         break;
 
                     case "Clear":
-                        weather.Visibility = "bez chmurnie";
+                        pogoda.Widoczność = "bez chmurnie";
                         pictureBox1.Load("http://openweathermap.org/img/w/01d.png");
                         break;
 
                     case "Mist":
-                        weather.Visibility = "mglisto";
+                        pogoda.Widoczność = "mglisto";
                         pictureBox1.Load("http://openweathermap.org/img/w/50d.png");
                         break;
                     case "Haze":
-                        weather.Visibility = "mglisto";
+                        pogoda.Widoczność = "mglisto";
                         pictureBox1.Load("http://openweathermap.org/img/w/50d.png");
                         break;
                     case "Snow":
-                        weather.Visibility = "śnieżnie";
+                        pogoda.Widoczność = "śnieżnie";
                         pictureBox1.Load("http://openweathermap.org/img/w/13d.png");
                         break;
 
                 }
-                label9.Text = weather.Title;
-                label11.Text = weather.Temperature;
-                label14.Text = weather.Wind;
-                label12.Text = weather.Humidity;
-                label15.Text = weather.Visibility;
-                label13.Text = weather.Sunrise;
-                label16.Text = weather.Sunset;
+                label9.Text = pogoda.Tytuł;
+                label11.Text = pogoda.Temperatura;
+                label14.Text = pogoda.Wiatr;
+                label12.Text = pogoda.Wilgotność;
+                label15.Text = pogoda.Widoczność;
+                label13.Text = pogoda.WschódSłońca;
+                label16.Text = pogoda.ZachódSłońca;
 
-                SetValue = label9.Text;
+                UstawWartość = label9.Text;
             }
             catch
             {
@@ -95,24 +95,24 @@ namespace WindowsFormsApplication1
         public void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
                 // Zapis do pliku (np. w celu własnej rejestracji warunków pogodowych na przestrzeni kilku dni)
-                string Title = label9.Text;
-                string Temperature = label11.Text;
-                string Wind = label14.Text;
-                string Humidity = label12.Text;
-                string Visibility = label15.Text;
-                string Sunrise = label13.Text;
-                string Sunset = label16.Text;
+                string Tytuł = label9.Text;
+                string Temperatura = label11.Text;
+                string Wiatr = label14.Text;
+                string Wilgotność = label12.Text;
+                string Widoczność = label15.Text;
+                string WschódSłońca = label13.Text;
+                string ZachódSłońca = label16.Text;
             try
             {
-                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"D:\Projekt\WindowsFormsApplication1\Pogoda.txt", true))
+                using (System.IO.StreamWriter plik = new System.IO.StreamWriter(@"D:\Projekt\WindowsFormsApplication1\Pogoda.txt", true))
                 {
-                    file.WriteLine("Tytuł:" + Title);
-                    file.WriteLine("Temperatura:" + Temperature);
-                    file.WriteLine("Wiatr:" + Wind);
-                    file.WriteLine("Wilgotność:" + Humidity);
-                    file.WriteLine("Widoczność:" + Visibility);
-                    file.WriteLine("Wschód słońca:" + Sunrise);
-                    file.WriteLine("Zachód słońca:" + Sunset);
+                    plik.WriteLine("Tytuł:" + Tytuł);
+                    plik.WriteLine("Temperatura:" + Temperatura);
+                    plik.WriteLine("Wiatr:" + Wiatr);
+                    plik.WriteLine("Wilgotność:" + Wilgotność);
+                    plik.WriteLine("Widoczność:" + Widoczność);
+                    plik.WriteLine("Wschód słońca:" + WschódSłońca);
+                    plik.WriteLine("Zachód słońca:" + ZachódSłońca);
                 }
             }
             catch
@@ -125,8 +125,8 @@ namespace WindowsFormsApplication1
         public void button2_Click(object sender, EventArgs e)
         {
             // Po kliknieciu przycisku uruchomienie fragmentu z prognozą pogody na kolejne dni
-            DalszaPogoda load = new DalszaPogoda();
-            load.ShowDialog();
+            DalszaPogoda załaduj = new DalszaPogoda();
+            załaduj.ShowDialog();
         }
 
       

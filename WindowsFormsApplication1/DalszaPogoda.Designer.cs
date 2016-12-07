@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DalszaPogoda));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.lvwTemps = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -48,9 +48,6 @@
             // 
             // lvwTemps
             // 
-            this.lvwTemps.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lvwTemps.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
@@ -59,7 +56,7 @@
             this.columnHeader5});
             this.lvwTemps.Location = new System.Drawing.Point(12, 89);
             this.lvwTemps.Name = "lvwTemps";
-            this.lvwTemps.Size = new System.Drawing.Size(419, 312);
+            this.lvwTemps.Size = new System.Drawing.Size(424, 379);
             this.lvwTemps.TabIndex = 24;
             this.lvwTemps.UseCompatibleStateImageBehavior = false;
             this.lvwTemps.View = System.Windows.Forms.View.Details;
@@ -68,7 +65,7 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Dzień";
-            this.columnHeader1.Width = 61;
+            this.columnHeader1.Width = 84;
             // 
             // columnHeader2
             // 
@@ -99,7 +96,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(163, 16);
+            this.label1.Location = new System.Drawing.Point(98, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(158, 55);
             this.label1.TabIndex = 25;
@@ -108,7 +105,7 @@
             // button2
             // 
             this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.Location = new System.Drawing.Point(453, 26);
+            this.button2.Location = new System.Drawing.Point(663, 26);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(175, 45);
             this.button2.TabIndex = 30;
@@ -118,39 +115,43 @@
             // 
             // WeatherChart
             // 
-            chartArea1.AxisX.Title = "Czas";
-            chartArea1.AxisY.Title = "Temperatura[°C] / Wiatr[m/s]";
-            chartArea1.Name = "ChartArea1";
-            this.WeatherChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            legend1.Title = "Oznaczenie";
-            this.WeatherChart.Legends.Add(legend1);
-            this.WeatherChart.Location = new System.Drawing.Point(437, 89);
+            this.WeatherChart.BackImage = "C:\\Users\\samsung\\Desktop\\Obrazy\\Pogoda\\image.php.jpg";
+            chartArea3.AxisX.Title = "Czas";
+            chartArea3.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            chartArea3.AxisY.Title = "Temperatura[°C] / Wiatr[m/s]";
+            chartArea3.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            chartArea3.Name = "ChartArea1";
+            this.WeatherChart.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            legend3.Title = "Oznaczenie";
+            this.WeatherChart.Legends.Add(legend3);
+            this.WeatherChart.Location = new System.Drawing.Point(436, 89);
             this.WeatherChart.Name = "WeatherChart";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Legend = "Legend1";
-            series1.Name = "Temperatura";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Color = System.Drawing.Color.DarkGreen;
-            series2.Legend = "Legend1";
-            series2.Name = "Predkość Wiatru";
-            this.WeatherChart.Series.Add(series1);
-            this.WeatherChart.Series.Add(series2);
-            this.WeatherChart.Size = new System.Drawing.Size(277, 312);
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series5.Legend = "Legend1";
+            series5.Name = "Temperatura";
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series6.Color = System.Drawing.Color.DarkGreen;
+            series6.Legend = "Legend1";
+            series6.Name = "Predkość Wiatru";
+            this.WeatherChart.Series.Add(series5);
+            this.WeatherChart.Series.Add(series6);
+            this.WeatherChart.Size = new System.Drawing.Size(412, 379);
             this.WeatherChart.TabIndex = 31;
             this.WeatherChart.Text = "chart1";
-            title1.Name = "Title1";
-            title1.Text = "Wykres Pogody";
-            this.WeatherChart.Titles.Add(title1);
+            title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            title3.Name = "Title1";
+            title3.Text = "Wykres Pogody";
+            this.WeatherChart.Titles.Add(title3);
             // 
             // DalszaPogoda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.deszcz1;
-            this.ClientSize = new System.Drawing.Size(716, 413);
+            this.ClientSize = new System.Drawing.Size(850, 480);
             this.Controls.Add(this.WeatherChart);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);

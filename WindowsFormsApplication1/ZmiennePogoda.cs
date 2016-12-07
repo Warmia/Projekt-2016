@@ -9,23 +9,23 @@ namespace WindowsFormsApplication1
     class ZmiennePogoda
     {
             // Metody do pobierania i ustawiania elemntów 
-            public string Title { get; set; }
-            public string Temperature { get; set; }
-            public string Wind { get; set; }
-            public string Humidity { get; set; }
-            public string Visibility { get; set; }
-            public string Sunrise { get; set; }
-            public string Sunset { get; set; }
+            public string Tytuł { get; set; }
+            public string Temperatura { get; set; }
+            public string Wiatr { get; set; }
+            public string Wilgotność { get; set; }
+            public string Widoczność { get; set; }
+            public string WschódSłońca { get; set; }
+            public string ZachódSłońca { get; set; }
             // Konstruktor nadający metodom wartość pustego łańcucha znakowego
             public ZmiennePogoda()
             {
-                this.Title = " ";
-                this.Temperature = " ";
-                this.Wind = " ";
-                this.Humidity = " ";
-                this.Visibility = " ";
-                this.Sunrise = " ";
-                this.Sunset = " ";
+                this.Tytuł = " ";
+                this.Temperatura = " ";
+                this.Wiatr = " ";
+                this.Wilgotność = " ";
+                this.Widoczność = " ";
+                this.WschódSłońca = " ";
+                this.ZachódSłońca = " ";
             }
     }
 }

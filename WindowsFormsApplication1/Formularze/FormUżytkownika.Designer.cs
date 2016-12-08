@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1.Formularze
+﻿namespace PogodaApp.Formularze
 {
     partial class FormUżytkownika
     {

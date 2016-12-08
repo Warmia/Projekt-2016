@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication1.Formularze
+namespace PogodaApp.Formularze
 {
     public partial class FormUżytkownika : Form
     {

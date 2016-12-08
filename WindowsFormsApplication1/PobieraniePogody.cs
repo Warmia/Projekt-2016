@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Net.Http;
 
-namespace WindowsFormsApplication1
+namespace PogodaApp
 {
     class PobieraniePogody 
     {

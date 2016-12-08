@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace PogodaApp
 {
     partial class CustomControl1
     {

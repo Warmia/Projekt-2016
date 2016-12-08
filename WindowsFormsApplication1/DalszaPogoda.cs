@@ -12,7 +12,7 @@ using System.IO;
 using System.Xml;
 using System.Globalization;
 
-namespace WindowsFormsApplication1
+namespace PogodaApp
 {
     public partial class DalszaPogoda : Form, IDalszaPogoda
     {
@@ -36,7 +36,7 @@ namespace WindowsFormsApplication1
         public void Form2_Load_1(object sender, EventArgs e)
         {
             // Ustawienie automatycznie nazwy miejscowości z pierwszej strony programu na drugiej stronie
-            label1.Text = ObecnaPogoda.UstawWartość;
+            Miejscowość.Text = ObecnaPogoda.UstawWartość;
         }
 
         private void lvwTemps_SelectedIndexChanged(object sender, EventArgs e)
@@ -49,7 +49,7 @@ namespace WindowsFormsApplication1
             //Po kliknieciu pobranie pliku w formacie xml z strony i sprawdzenie poprawności wczytania danych
             Cursor = Cursors.WaitCursor;
 
-            string url = PrognozaUrl.Replace("@LOC@", label1.Text);
+            string url = PrognozaUrl.Replace("@LOC@", Miejscowość.Text);
             XmlDocument xml_doc;
             try
             {
@@ -76,7 +76,7 @@ namespace WindowsFormsApplication1
         }
         public void ListaTemperatur(XmlDocument xml_doc)
         {
-            lvwTemps.Items.Clear();
+            WarunkiPrognoza.Items.Clear();
 
             string ostatni_dzień = "";
             foreach (XmlNode czasu_węzeł in xml_doc.SelectNodes("//time"))
@@ -144,12 +144,12 @@ namespace WindowsFormsApplication1
                 }
                 if (dzień == ostatni_dzień)
                 {
-                    item = lvwTemps.Items.Add("");
+                    item = WarunkiPrognoza.Items.Add("");
                 }
                 else
                 {
                     
-                    item = lvwTemps.Items.Add(dzień);
+                    item = WarunkiPrognoza.Items.Add(dzień);
                 }
                 //Ustawienie formatu wyświetlanych danych
                 item.SubItems.Add(start_czas.ToShortTimeString());
@@ -159,13 +159,13 @@ namespace WindowsFormsApplication1
 
                 
                 
-                WeatherChart.ChartAreas[0].CursorX.IsUserEnabled = true;
-                WeatherChart.ChartAreas[0].CursorX.IsUserSelectionEnabled = true;
-                WeatherChart.ChartAreas[0].AxisX.ScaleView.Zoomable = true;
-                WeatherChart.Series[0].Points.AddXY(dzień + " " + start_czas.ToShortTimeString(), temp);
-                WeatherChart.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-                WeatherChart.Series[1].Points.AddXY(dzień + " " + start_czas.ToShortTimeString(), wiatr);
-                WeatherChart.Series[1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+                WykresPogoda.ChartAreas[0].CursorX.IsUserEnabled = true;
+                WykresPogoda.ChartAreas[0].CursorX.IsUserSelectionEnabled = true;
+                WykresPogoda.ChartAreas[0].AxisX.ScaleView.Zoomable = true;
+                WykresPogoda.Series[0].Points.AddXY(dzień + " " + start_czas.ToShortTimeString(), temp);
+                WykresPogoda.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+                WykresPogoda.Series[1].Points.AddXY(dzień + " " + start_czas.ToShortTimeString(), wiatr);
+                WykresPogoda.Series[1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             }
            
         }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 // Biblioteki do m.in. do operacji nad plikiem, czy tworzenia okna aplikacji
 
-namespace WindowsFormsApplication1
+namespace PogodaApp
 {
     public partial class ObecnaPogoda : Form, IObecnaPogoda
     {
@@ -21,24 +21,24 @@ namespace WindowsFormsApplication1
             // Inicjalizacja wszystkich elemntów i nadanie nazwy programowi
             InitializeComponent();
             this.Text = "Aplikacja pogodowa";
-            button1.Click += button1_Click_1;
+            WyświetlObecną.Click += button1_Click_1;
         }
         public void Form1_Load(object sender, EventArgs e)
         {
             //Podpowiedzi do pól tekstowych wprowadzania danych
             System.Windows.Forms.ToolTip Podpowiedź1 = new System.Windows.Forms.ToolTip();
-            Podpowiedź1.SetToolTip(this.textBox1, "Podaj miasto do wyszukania");
+            Podpowiedź1.SetToolTip(this.tekstMiasto, "Podaj miasto do wyszukania");
             System.Windows.Forms.ToolTip Podpowiedź2 = new System.Windows.Forms.ToolTip();
-            Podpowiedź2.SetToolTip(this.textBox8, "Skrót państwa np. pl");  
+            Podpowiedź2.SetToolTip(this.tekstPaństwo, "Skrót państwa np. pl");  
         }
         private async void button1_Click_1(object sender, EventArgs e)
         {
             //Pobieranie po kliknieciu dla miasta danych pogodowych
             //Sprawdzenie przy tym czy klient wpisał dane
             string tekst1;
-            tekst1 = textBox1.Text;
+            tekst1 = tekstMiasto.Text;
             string tekst2;
-            tekst2 = textBox8.Text;
+            tekst2 = tekstPaństwo.Text;
 
             try
             {
@@ -49,42 +49,42 @@ namespace WindowsFormsApplication1
                     // Pobranie w zależności od warunków pogodowych odpowiedniego zdjęcia
                     case "Rain":
                         pogoda.Widoczność = "deszczowo";
-                        pictureBox1.Load("http://openweathermap.org/img/w/10d.png");
+                        Obrazek.Load("http://openweathermap.org/img/w/10d.png");
                         break;
 
                     case "Clouds":
                         pogoda.Widoczność = "z chmurami";
-                        pictureBox1.Load("http://openweathermap.org/img/w/02d.png");
+                        Obrazek.Load("http://openweathermap.org/img/w/02d.png");
                         break;
 
                     case "Clear":
                         pogoda.Widoczność = "bez chmurnie";
-                        pictureBox1.Load("http://openweathermap.org/img/w/01d.png");
+                        Obrazek.Load("http://openweathermap.org/img/w/01d.png");
                         break;
 
                     case "Mist":
                         pogoda.Widoczność = "mglisto";
-                        pictureBox1.Load("http://openweathermap.org/img/w/50d.png");
+                        Obrazek.Load("http://openweathermap.org/img/w/50d.png");
                         break;
                     case "Haze":
                         pogoda.Widoczność = "mglisto";
-                        pictureBox1.Load("http://openweathermap.org/img/w/50d.png");
+                        Obrazek.Load("http://openweathermap.org/img/w/50d.png");
                         break;
                     case "Snow":
                         pogoda.Widoczność = "śnieżnie";
-                        pictureBox1.Load("http://openweathermap.org/img/w/13d.png");
+                        Obrazek.Load("http://openweathermap.org/img/w/13d.png");
                         break;
 
                 }
-                label9.Text = pogoda.Tytuł;
-                label11.Text = pogoda.Temperatura;
-                label14.Text = pogoda.Wiatr;
-                label12.Text = pogoda.Wilgotność;
-                label15.Text = pogoda.Widoczność;
-                label13.Text = pogoda.WschódSłońca;
-                label16.Text = pogoda.ZachódSłońca;
+                TytułTekst.Text = pogoda.Tytuł;
+                TemperaturaTekst.Text = pogoda.Temperatura;
+                WiatrTekst.Text = pogoda.Wiatr;
+                WilgotnośćTekst.Text = pogoda.Wilgotność;
+                WidocznośćTekst.Text = pogoda.Widoczność;
+                WschódTekst.Text = pogoda.WschódSłońca;
+                ZachódTekst.Text = pogoda.ZachódSłońca;
 
-                UstawWartość = label9.Text;
+                UstawWartość = TytułTekst.Text;
             }
             catch
             {
@@ -95,13 +95,13 @@ namespace WindowsFormsApplication1
         public void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
                 // Zapis do pliku (np. w celu własnej rejestracji warunków pogodowych na przestrzeni kilku dni)
-                string Tytuł = label9.Text;
-                string Temperatura = label11.Text;
-                string Wiatr = label14.Text;
-                string Wilgotność = label12.Text;
-                string Widoczność = label15.Text;
-                string WschódSłońca = label13.Text;
-                string ZachódSłońca = label16.Text;
+                string Tytuł = TytułTekst.Text;
+                string Temperatura = TemperaturaTekst.Text;
+                string Wiatr = WiatrTekst.Text;
+                string Wilgotność = WilgotnośćTekst.Text;
+                string Widoczność = WidocznośćTekst.Text;
+                string WschódSłońca = WschódTekst.Text;
+                string ZachódSłońca = ZachódTekst.Text;
             try
             {
                 using (System.IO.StreamWriter plik = new System.IO.StreamWriter(@"D:\Projekt\WindowsFormsApplication1\Pogoda.txt", true))

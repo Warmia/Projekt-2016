@@ -8,9 +8,9 @@ namespace PogodaApp
 {
     interface IObecnaPogoda
     {
-        
-        void Form1_Load(object sender, EventArgs e);
-        void toolStripMenuItem1_Click(object sender, EventArgs e);
-        void button2_Click(object sender, EventArgs e);
+
+        void ŁadowanieFormularza(object sender, EventArgs e);
+        void ZapisDoPliku(object sender, EventArgs e);
+        void PrzyciskPrzeniesienie(object sender, EventArgs e);
     }
 }

@@ -9,8 +9,8 @@ namespace PogodaApp
 {
     interface IDalszaPogoda
     {
-        void Form2_Load_1(object sender, EventArgs e);
-        void button2_Click(object sender, EventArgs e);
+        void UstawienieNazwy(object sender, EventArgs e);
+        void KliknieciePrzycisku(object sender, EventArgs e);
         void ListaTemperatur(XmlDocument xml_doc);
     }
 }

@@ -21,9 +21,9 @@ namespace PogodaApp
             // Inicjalizacja wszystkich elemntów i nadanie nazwy programowi
             InitializeComponent();
             this.Text = "Aplikacja pogodowa";
-            WyświetlObecną.Click += button1_Click_1;
+            WyświetlObecną.Click += ŁadowanieFormularza;
         }
-        public void Form1_Load(object sender, EventArgs e)
+        public void ŁadowanieFormularza(object sender, EventArgs e)
         {
             //Podpowiedzi do pól tekstowych wprowadzania danych
             System.Windows.Forms.ToolTip Podpowiedź1 = new System.Windows.Forms.ToolTip();
@@ -31,7 +31,7 @@ namespace PogodaApp
             System.Windows.Forms.ToolTip Podpowiedź2 = new System.Windows.Forms.ToolTip();
             Podpowiedź2.SetToolTip(this.tekstPaństwo, "Skrót państwa np. pl");  
         }
-        private async void button1_Click_1(object sender, EventArgs e)
+        private async void KliknieciePrzycisku(object sender, EventArgs e)
         {
             //Pobieranie po kliknieciu dla miasta danych pogodowych
             //Sprawdzenie przy tym czy klient wpisał dane
@@ -92,7 +92,7 @@ namespace PogodaApp
             }
 
         }
-        public void toolStripMenuItem1_Click(object sender, EventArgs e)
+        public void ZapisDoPliku(object sender, EventArgs e)
         {
                 // Zapis do pliku (np. w celu własnej rejestracji warunków pogodowych na przestrzeni kilku dni)
                 string Tytuł = TytułTekst.Text;
@@ -122,26 +122,11 @@ namespace PogodaApp
             
         }
        
-        public void button2_Click(object sender, EventArgs e)
+        public void PrzyciskPrzeniesienie(object sender, EventArgs e)
         {
             // Po kliknieciu przycisku uruchomienie fragmentu z prognozą pogody na kolejne dni
             DalszaPogoda załaduj = new DalszaPogoda();
             załaduj.ShowDialog();
         }
-
-      
-
-        
-
-       
-
-       
-
-       
-
-        
-
-       
-
     }
 }

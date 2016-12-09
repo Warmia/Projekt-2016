@@ -2,30 +2,22 @@
 {
     partial class DalszaPogoda
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        
+        private System.ComponentModel.IContainer komponenty = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
+       
+        protected override void Dispose(bool zamkniecie)
         {
-            if (disposing && (components != null))
+            if (zamkniecie && (komponenty != null))
             {
-                components.Dispose();
+                komponenty.Dispose();
             }
-            base.Dispose(disposing);
+            base.Dispose(zamkniecie);
         }
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
+        
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DalszaPogoda));
@@ -35,11 +27,11 @@
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.WarunkiPrognoza = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.NagłówekKolumny1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.NagłówekKolumny2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.NagłówekKolumny3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.NagłówekKolumny4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.NagłówekKolumny5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Miejscowość = new System.Windows.Forms.Label();
             this.NastepnęDni = new System.Windows.Forms.Button();
             this.WykresPogoda = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -49,47 +41,46 @@
             // WarunkiPrognoza
             // 
             this.WarunkiPrognoza.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5});
+            this.NagłówekKolumny1,
+            this.NagłówekKolumny2,
+            this.NagłówekKolumny3,
+            this.NagłówekKolumny4,
+            this.NagłówekKolumny5});
             this.WarunkiPrognoza.Location = new System.Drawing.Point(12, 89);
             this.WarunkiPrognoza.Name = "WarunkiPrognoza";
             this.WarunkiPrognoza.Size = new System.Drawing.Size(435, 379);
             this.WarunkiPrognoza.TabIndex = 24;
             this.WarunkiPrognoza.UseCompatibleStateImageBehavior = false;
             this.WarunkiPrognoza.View = System.Windows.Forms.View.Details;
-            this.WarunkiPrognoza.SelectedIndexChanged += new System.EventHandler(this.lvwTemps_SelectedIndexChanged);
             // 
-            // columnHeader1
+            // NagłówekKolumny1
             // 
-            this.columnHeader1.Text = "Dzień";
-            this.columnHeader1.Width = 84;
+            this.NagłówekKolumny1.Text = "Dzień";
+            this.NagłówekKolumny1.Width = 84;
             // 
-            // columnHeader2
+            // NagłówekKolumny2
             // 
-            this.columnHeader2.Text = "Czas";
-            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.columnHeader2.Width = 58;
+            this.NagłówekKolumny2.Text = "Czas";
+            this.NagłówekKolumny2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.NagłówekKolumny2.Width = 58;
             // 
-            // columnHeader3
+            // NagłówekKolumny3
             // 
-            this.columnHeader3.Text = "Temperatura[°C]";
-            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.columnHeader3.Width = 90;
+            this.NagłówekKolumny3.Text = "Temperatura[°C]";
+            this.NagłówekKolumny3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.NagłówekKolumny3.Width = 90;
             // 
-            // columnHeader4
+            // NagłówekKolumny4
             // 
-            this.columnHeader4.Text = "Wiatr[m/s]";
-            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.columnHeader4.Width = 64;
+            this.NagłówekKolumny4.Text = "Wiatr[m/s]";
+            this.NagłówekKolumny4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.NagłówekKolumny4.Width = 64;
             // 
-            // columnHeader5
+            // NagłówekKolumny5
             // 
-            this.columnHeader5.Text = "Wilgotność[%]";
-            this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.columnHeader5.Width = 140;
+            this.NagłówekKolumny5.Text = "Wilgotność[%]";
+            this.NagłówekKolumny5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.NagłówekKolumny5.Width = 140;
             // 
             // Miejscowość
             // 
@@ -98,9 +89,8 @@
             this.Miejscowość.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Miejscowość.Location = new System.Drawing.Point(98, 16);
             this.Miejscowość.Name = "Miejscowość";
-            this.Miejscowość.Size = new System.Drawing.Size(158, 55);
+            this.Miejscowość.Size = new System.Drawing.Size(0, 55);
             this.Miejscowość.TabIndex = 25;
-            this.Miejscowość.Text = "label1";
             // 
             // NastepnęDni
             // 
@@ -111,7 +101,7 @@
             this.NastepnęDni.TabIndex = 30;
             this.NastepnęDni.Text = "Wyświetl nastepnę dni";
             this.NastepnęDni.UseVisualStyleBackColor = true;
-            this.NastepnęDni.Click += new System.EventHandler(this.button2_Click);
+            this.NastepnęDni.Click += new System.EventHandler(this.KliknieciePrzycisku);
             // 
             // WykresPogoda
             // 
@@ -150,6 +140,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.BackgroundImage = global::PogodaApp.Properties.Resources.deszcz1;
             this.ClientSize = new System.Drawing.Size(850, 480);
             this.Controls.Add(this.WykresPogoda);
@@ -159,7 +151,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DalszaPogoda";
             this.Text = "Aplikacja pogodowa";
-            this.Load += new System.EventHandler(this.Form2_Load_1);
+            this.Load += new System.EventHandler(this.UstawienieNazwy);
             ((System.ComponentModel.ISupportInitialize)(this.WykresPogoda)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -171,11 +163,11 @@
         #endregion
 
         private System.Windows.Forms.ListView WarunkiPrognoza;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader NagłówekKolumny1;
+        private System.Windows.Forms.ColumnHeader NagłówekKolumny2;
+        private System.Windows.Forms.ColumnHeader NagłówekKolumny3;
+        private System.Windows.Forms.ColumnHeader NagłówekKolumny4;
+        private System.Windows.Forms.ColumnHeader NagłówekKolumny5;
         private System.Windows.Forms.Label Miejscowość;
         private System.Windows.Forms.Button NastepnęDni;
         private System.Windows.Forms.DataVisualization.Charting.Chart WykresPogoda;

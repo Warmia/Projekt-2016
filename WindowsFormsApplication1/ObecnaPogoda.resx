@@ -268,7 +268,7 @@
   <data name="PogodaKolejne.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAK4AAAAqCAYAAAAqLWAgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACw8AAAsPAZL5A6UAAAAGYktHRAD/AP8A/6C9p5MAAAAHdElNRQfgCxMNOBmUwP8q
+        YQUAAAAJcEhZcwAACw0AAAsNAe0HwCwAAAAGYktHRAD/AP8A/6C9p5MAAAAHdElNRQfgCxMNOBmUwP8q
         AAAg4ElEQVR4Xu2ae1SV973m321qrdWWaNVqRGurVqux9Vij8bijKA1oIAiEHeOWyEXciFzcgltxI4Io
         IhcRFJWL3G9eMBpjNGnSW3J62p729Jpe00vapGmT2NDMmbXmn+l85/PApitzVmfWTKdNb2Stz/r+9hbe
         9/d9nk9c6Vp1cnP3Ovpn06bNd6anZ67Oz99/IBgsGThw4FDfKKP8JcHDi37/3kB6+s6IpIe8k+Tpnj2F
@@ -437,7 +437,7 @@
 </value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>52</value>
+    <value>25</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

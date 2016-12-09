@@ -20,31 +20,18 @@ namespace PogodaApp
         {
             InitializeComponent();
         }
-        private  void Form2_Load(object sender, EventArgs e)
-        {
-            
-
-        }
+        
         // Klucz programu i link do prognozy pogody 5dni/3godziny
         private const string API_KLUCZ = "f8dc63a23acc6e0e69070a66a3c01c0a";
         private const string PrognozaUrl = "http://api.openweathermap.org/data/2.5/forecast?" + "q=@LOC@&mode=xml&units=Metric&APPID=" + API_KLUCZ;
 
-
-
-       
-
-        public void Form2_Load_1(object sender, EventArgs e)
+        public void UstawienieNazwy(object sender, EventArgs e)
         {
             // Ustawienie automatycznie nazwy miejscowości z pierwszej strony programu na drugiej stronie
             Miejscowość.Text = ObecnaPogoda.UstawWartość;
         }
 
-        private void lvwTemps_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        public void button2_Click(object sender, EventArgs e)
+        public void KliknieciePrzycisku(object sender, EventArgs e)
         {
             //Po kliknieciu pobranie pliku w formacie xml z strony i sprawdzenie poprawności wczytania danych
             Cursor = Cursors.WaitCursor;
@@ -58,11 +45,9 @@ namespace PogodaApp
 
                     string xml = klient.DownloadString(url);
 
-
                     xml_doc = new XmlDocument();
                     xml_doc.LoadXml(xml);
                 }
-
 
                 ListaTemperatur(xml_doc);
             }
@@ -71,7 +56,6 @@ namespace PogodaApp
                 MessageBox.Show("Nie wprowadzano danych!", "Błąd pobierania", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
             Cursor = Cursors.Default;
-            
             
         }
         public void ListaTemperatur(XmlDocument xml_doc)
@@ -85,9 +69,7 @@ namespace PogodaApp
                 XmlAttribute czas_atr = czasu_węzeł.Attributes["from"];
                 DateTime start_czas = DateTime.Parse(czas_atr.Value);
 
-
                 start_czas = start_czas.ToLocalTime();
-
 
                 start_czas += new TimeSpan(1, 30, 0);
                 string  dzień = start_czas.DayOfWeek.ToString();
@@ -157,8 +139,6 @@ namespace PogodaApp
                 item.SubItems.Add(wiatr.ToString("0.00"));
                 item.SubItems.Add(wilgotność.ToString("0.00"));
 
-                
-                
                 WykresPogoda.ChartAreas[0].CursorX.IsUserEnabled = true;
                 WykresPogoda.ChartAreas[0].CursorX.IsUserSelectionEnabled = true;
                 WykresPogoda.ChartAreas[0].AxisX.ScaleView.Zoomable = true;
@@ -167,7 +147,6 @@ namespace PogodaApp
                 WykresPogoda.Series[1].Points.AddXY(dzień + " " + start_czas.ToShortTimeString(), wiatr);
                 WykresPogoda.Series[1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             }
-           
         }
     }
 }

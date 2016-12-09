@@ -2,30 +2,22 @@
 {
     partial class ObecnaPogoda
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        
+        private System.ComponentModel.IContainer komponenty = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
+        
+        protected override void Dispose(bool zamkniecie)
         {
-            if (disposing && (components != null))
+            if (zamkniecie && (komponenty != null))
             {
-                components.Dispose();
+                komponenty.Dispose();
             }
-            base.Dispose(disposing);
+            base.Dispose(zamkniecie);
         }
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
+       
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ObecnaPogoda));
@@ -125,15 +117,15 @@
             this.WyświetlObecną.TabIndex = 14;
             this.WyświetlObecną.Text = "Wyświetl obecną pogodę ";
             this.WyświetlObecną.UseVisualStyleBackColor = false;
-            this.WyświetlObecną.Click += new System.EventHandler(this.button1_Click_1);
+            this.WyświetlObecną.Click += new System.EventHandler(this.KliknieciePrzycisku);
             // 
-            // label9
+            // TytułTekst
             // 
             this.TytułTekst.AutoSize = true;
             this.TytułTekst.BackColor = System.Drawing.Color.Transparent;
             this.TytułTekst.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.TytułTekst.Location = new System.Drawing.Point(2, 114);
-            this.TytułTekst.Name = "label9";
+            this.TytułTekst.Name = "TytułTekst";
             this.TytułTekst.Size = new System.Drawing.Size(0, 39);
             this.TytułTekst.TabIndex = 15;
             // 
@@ -146,7 +138,7 @@
             this.PogodaKolejne.TabIndex = 29;
             this.PogodaKolejne.Text = "Pogoda na kolejne dni";
             this.PogodaKolejne.UseVisualStyleBackColor = true;
-            this.PogodaKolejne.Click += new System.EventHandler(this.button2_Click);
+            this.PogodaKolejne.Click += new System.EventHandler(this.PrzyciskPrzeniesienie);
             // 
             // WilgotnośćTekst
             // 
@@ -340,6 +332,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.BackgroundImage = global::PogodaApp.Properties.Resources.deszcz1;
             this.ClientSize = new System.Drawing.Size(584, 345);
@@ -353,10 +346,12 @@
             this.Controls.Add(this.Miasto);
             this.Controls.Add(this.OgólneInformacje);
             this.Controls.Add(this.Okienko);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ObecnaPogoda";
             this.Text = "Aplikacja pogodowa";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.ŁadowanieFormularza);
             ((System.ComponentModel.ISupportInitialize)(this.Obrazek)).EndInit();
             this.PasekNarzędzi.ResumeLayout(false);
             this.PasekNarzędzi.PerformLayout();

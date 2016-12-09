@@ -14,7 +14,7 @@ namespace PogodaApp
     static class Program 
     {
         /// <summary>
-        /// The main entry point for the application.
+        /// Główna metoda aplikacji-uruchomienie jej
         /// </summary>
         [STAThread]
         static void Main()

@@ -14,6 +14,9 @@ using System.Globalization;
 
 namespace PogodaApp
 {
+    /// <summary>
+    /// Klasa DalszaPogoda dziedziczy po systemowej klasie Form i interfejsie IDalszaPogoda
+    /// </summary>
     public partial class DalszaPogoda : Form, IDalszaPogoda
     {
         public DalszaPogoda()
@@ -139,6 +142,7 @@ namespace PogodaApp
                 item.SubItems.Add(wiatr.ToString("0.00"));
                 item.SubItems.Add(wilgotność.ToString("0.00"));
 
+                //Tworzenie wykresu z dwoma seriami(wykresami) danych
                 WykresPogoda.ChartAreas[0].CursorX.IsUserEnabled = true;
                 WykresPogoda.ChartAreas[0].CursorX.IsUserSelectionEnabled = true;
                 WykresPogoda.ChartAreas[0].AxisX.ScaleView.Zoomable = true;

@@ -12,6 +12,9 @@ using System.Windows.Forms;
 
 namespace PogodaApp
 {
+    /// <summary>
+    /// Klasa ObecnaPogoda dziedziczy po systemowej klasie Form i interfejsie IObecnaPogoda
+    /// </summary>
     public partial class ObecnaPogoda : Form, IObecnaPogoda
     {
         public static string UstawWartość = "";

@@ -8,6 +8,7 @@ namespace PogodaApp
 {
     abstract class AbstrakcyjneWartości
     {
+        // Metodą wirtualna którą można nadpisać w różny sposób w zależności od m.in. klucza, czy też użytego tekstu zapytania
         virtual public async Task<ZmiennePogoda> OtrzymajPogodę(string miasto, string kraj)
         {
             // Darmowy klucz dostępu oraz zapytanie do strony
@@ -20,6 +21,7 @@ namespace PogodaApp
             // Jeżeli wartości pogody są różne od null to stwórz obiekt i przypisz mu odpowiednie pobrane wartości 
             if (resultat["weather"] != null)
             {
+                //Pobranie odpowiednich wartości zmiennych i dodanie im odpowiedniej jednostki
                 ZmiennePogoda pogoda = new ZmiennePogoda();
                 pogoda.Tytuł = (string)resultat["name"];
                 pogoda.Temperatura = (string)resultat["main"]["temp"] + " °C";
@@ -27,6 +29,7 @@ namespace PogodaApp
                 pogoda.Wilgotność = (string)resultat["main"]["humidity"] + " %";
                 pogoda.Widoczność = (string)resultat["weather"][0]["main"];
 
+                //Operacje nad czasem,pobranie czasu wschodu i zachodu słońca
                 DateTime czas = new System.DateTime(1970, 1, 1, 0, 0, 0, 0);
                 DateTime sunrise = czas.AddSeconds((double)resultat["sys"]["sunrise"]);
                 DateTime sunset = czas.AddSeconds((double)resultat["sys"]["sunset"]);

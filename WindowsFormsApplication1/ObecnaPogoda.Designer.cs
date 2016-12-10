@@ -191,8 +191,9 @@
             // Zapisz
             // 
             this.Zapisz.Name = "Zapisz";
-            this.Zapisz.Size = new System.Drawing.Size(110, 22);
+            this.Zapisz.Size = new System.Drawing.Size(152, 22);
             this.Zapisz.Text = "Zapisz ";
+            this.Zapisz.Click += new System.EventHandler(this.ZapisDoPliku);
             // 
             // Dzielnik
             // 

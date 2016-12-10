@@ -117,7 +117,99 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="NagłówekKolumny1.Text" xml:space="preserve">
+    <value>Dzień</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="NagłówekKolumny1.Width" type="System.Int32, mscorlib">
+    <value>84</value>
+  </data>
+  <data name="NagłówekKolumny2.Text" xml:space="preserve">
+    <value>Czas</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="NagłówekKolumny2.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="NagłówekKolumny2.Width" type="System.Int32, mscorlib">
+    <value>58</value>
+  </data>
+  <data name="NagłówekKolumny3.Text" xml:space="preserve">
+    <value>Temperatura[°C]</value>
+  </data>
+  <data name="NagłówekKolumny3.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="NagłówekKolumny3.Width" type="System.Int32, mscorlib">
+    <value>90</value>
+  </data>
+  <data name="NagłówekKolumny4.Text" xml:space="preserve">
+    <value>Wiatr[m/s]</value>
+  </data>
+  <data name="NagłówekKolumny4.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="NagłówekKolumny4.Width" type="System.Int32, mscorlib">
+    <value>61</value>
+  </data>
+  <data name="NagłówekKolumny5.Text" xml:space="preserve">
+    <value>Wilgotność[%]</value>
+  </data>
+  <data name="NagłówekKolumny5.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="NagłówekKolumny5.Width" type="System.Int32, mscorlib">
+    <value>180</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="WarunkiPrognoza.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 89</value>
+  </data>
+  <data name="WarunkiPrognoza.Size" type="System.Drawing.Size, System.Drawing">
+    <value>479, 379</value>
+  </data>
+  <data name="WarunkiPrognoza.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;WarunkiPrognoza.Name" xml:space="preserve">
+    <value>WarunkiPrognoza</value>
+  </data>
+  <data name="&gt;&gt;WarunkiPrognoza.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WarunkiPrognoza.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;WarunkiPrognoza.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="Miejscowość.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Miejscowość.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 36pt, style=Bold</value>
+  </data>
+  <data name="Miejscowość.Location" type="System.Drawing.Point, System.Drawing">
+    <value>98, 16</value>
+  </data>
+  <data name="Miejscowość.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 55</value>
+  </data>
+  <data name="Miejscowość.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;Miejscowość.Name" xml:space="preserve">
+    <value>Miejscowość</value>
+  </data>
+  <data name="&gt;&gt;Miejscowość.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Miejscowość.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Miejscowość.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="NastepnęDni.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAK4AAAAqCAYAAAAqLWAgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -264,6 +356,66 @@
         53eSUyF0PtvtOE1tjtN5znEun2IedJxHopB0puOM+yDzvUPKOs5/C83f/zMB9NfxLPgYLIV7YQ1EwNpR
         RnkHcMM9cDd8hL9pJe14x3Gc/wk49Ob5+GTE+AAAAABJRU5ErkJggg==
 </value>
+  </data>
+  <data name="NastepnęDni.Location" type="System.Drawing.Point, System.Drawing">
+    <value>642, 26</value>
+  </data>
+  <data name="NastepnęDni.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 45</value>
+  </data>
+  <data name="NastepnęDni.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="NastepnęDni.Text" xml:space="preserve">
+    <value>Wyświetl nastepnę dni</value>
+  </data>
+  <data name="&gt;&gt;NastepnęDni.Name" xml:space="preserve">
+    <value>NastepnęDni</value>
+  </data>
+  <data name="&gt;&gt;NastepnęDni.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NastepnęDni.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;NastepnęDni.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="WykresPogoda.Location" type="System.Drawing.Point, System.Drawing">
+    <value>487, 89</value>
+  </data>
+  <data name="WykresPogoda.Size" type="System.Drawing.Size, System.Drawing">
+    <value>441, 379</value>
+  </data>
+  <data name="WykresPogoda.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="WykresPogoda.Text" xml:space="preserve">
+    <value>chart1</value>
+  </data>
+  <data name="&gt;&gt;WykresPogoda.Name" xml:space="preserve">
+    <value>WykresPogoda</value>
+  </data>
+  <data name="&gt;&gt;WykresPogoda.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataVisualization.Charting.Chart, System.Windows.Forms.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35</value>
+  </data>
+  <data name="&gt;&gt;WykresPogoda.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;WykresPogoda.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>930, 470</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -520,5 +672,44 @@
         gAH//wAA//+AAf//AAD//4AB//8AAP//AYD//wAA//wDwD//AAD//AfgP/8AAP/4D/Af/wAA//Af+A//
         AAD/4D/8B/8AAP/gf/4H/wAA////////AAA=
 </value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Aplikacja pogodowa</value>
+  </data>
+  <data name="&gt;&gt;NagłówekKolumny1.Name" xml:space="preserve">
+    <value>NagłówekKolumny1</value>
+  </data>
+  <data name="&gt;&gt;NagłówekKolumny1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NagłówekKolumny2.Name" xml:space="preserve">
+    <value>NagłówekKolumny2</value>
+  </data>
+  <data name="&gt;&gt;NagłówekKolumny2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NagłówekKolumny3.Name" xml:space="preserve">
+    <value>NagłówekKolumny3</value>
+  </data>
+  <data name="&gt;&gt;NagłówekKolumny3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NagłówekKolumny4.Name" xml:space="preserve">
+    <value>NagłówekKolumny4</value>
+  </data>
+  <data name="&gt;&gt;NagłówekKolumny4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NagłówekKolumny5.Name" xml:space="preserve">
+    <value>NagłówekKolumny5</value>
+  </data>
+  <data name="&gt;&gt;NagłówekKolumny5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>DalszaPogoda</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

@@ -95,6 +95,9 @@
     <EmbeddedResource Include="CustomControl1.resx">
       <DependentUpon>CustomControl1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DalszaPogoda.pl-PL.resx">
+      <DependentUpon>DalszaPogoda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ObecnaPogoda.resx">
       <DependentUpon>ObecnaPogoda.cs</DependentUpon>
     </EmbeddedResource>

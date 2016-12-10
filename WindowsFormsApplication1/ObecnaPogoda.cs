@@ -97,14 +97,14 @@ namespace PogodaApp
         }
         public void ZapisDoPliku(object sender, EventArgs e)
         {
-                // Zapis do pliku (np. w celu własnej rejestracji warunków pogodowych na przestrzeni kilku dni)
-                string Tytuł = TytułTekst.Text;
-                string Temperatura = TemperaturaTekst.Text;
-                string Wiatr = WiatrTekst.Text;
-                string Wilgotność = WilgotnośćTekst.Text;
-                string Widoczność = WidocznośćTekst.Text;
-                string WschódSłońca = WschódTekst.Text;
-                string ZachódSłońca = ZachódTekst.Text;
+            // Zapis do pliku (np. w celu własnej rejestracji warunków pogodowych na przestrzeni kilku dni)
+            string Tytuł = TytułTekst.Text;
+            string Temperatura = TemperaturaTekst.Text;
+            string Wiatr = WiatrTekst.Text;
+            string Wilgotność = WilgotnośćTekst.Text;
+            string Widoczność = WidocznośćTekst.Text;
+            string WschódSłońca = WschódTekst.Text;
+            string ZachódSłońca = ZachódTekst.Text;
             try
             {
                 using (System.IO.StreamWriter plik = new System.IO.StreamWriter(@"D:\Projekt\WindowsFormsApplication1\Pogoda.txt", true))
@@ -120,16 +120,16 @@ namespace PogodaApp
             }
             catch
             {
-                 MessageBox.Show("Nie zapisano pliku!", "Błąd zapisu", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                MessageBox.Show("Nie zapisano pliku!", "Błąd zapisu", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
-            
         }
-       
+        
         public void PrzyciskPrzeniesienie(object sender, EventArgs e)
         {
             // Po kliknieciu przycisku uruchomienie fragmentu z prognozą pogody na kolejne dni
             DalszaPogoda załaduj = new DalszaPogoda();
             załaduj.ShowDialog();
         }
+
     }
 }

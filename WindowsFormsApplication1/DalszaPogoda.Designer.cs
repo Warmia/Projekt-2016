@@ -86,7 +86,8 @@
             // 
             // WykresPogoda
             // 
-            this.WykresPogoda.BackImage = "C:\\Users\\samsung\\Desktop\\Obrazy\\Pogoda\\image.php.jpg";
+            this.WykresPogoda.BackColor = System.Drawing.Color.MidnightBlue;
+            this.WykresPogoda.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalLeft;
             chartArea1.AxisX.Title = "Czas";
             chartArea1.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             chartArea1.AxisY.Title = "Temperatura[°C] / Wiatr[m/s]";
